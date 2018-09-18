@@ -6,5 +6,6 @@ node {
     sh 'ls'
   }
   stage ('Remombro archiv'){
-    sh 'mv gaby.1 gaby'
-}
+    sh ' gaby.1 gaby'
+  }
+}  
