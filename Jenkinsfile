@@ -6,7 +6,7 @@ pipeline {
     stage('Maven Install') {
       agent {
         docker {
-          image 'ubuntu:15.04'
+          image 'maven:3.5.0'
         }
       }
       steps {
