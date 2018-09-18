@@ -5,4 +5,6 @@ node {
   stage ('Build Docker Image'){
     sh 'ls'
   }
+  stage ('Remombro archiv'){
+    sh 'mv Gaby1 gaby'
 }
