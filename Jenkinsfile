@@ -6,6 +6,6 @@ node {
     sh 'ls'
   }
   stage ('Remombro archiv'){
-    sh ' gaby.1 gaby'
+    sh 'cat /etc/hostname'
   }
 }  
