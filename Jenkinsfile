@@ -1,21 +1,17 @@
-pipeline {
-    agent any
+#!groovy
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
+pipeline {
+  agent none
+  stages {
+    stage('Maven Install') {
+      agent {
+        docker {
+          image 'ubuntu:15.04'
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+      }
+      steps {
+        sh 'mvn clean install'
+      }
+    } 
+  }
 }
