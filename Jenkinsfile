@@ -1,17 +1,4 @@
-#!groovy
-
-pipeline {
-  agent none
-  stages {
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'maven:3.5.0'
-        }
-      }
-      steps {
-        sh 'mvn clean install'
-      }
-    } 
+node {
+  stage ('SCM Checkout'){
+    git branch: 'rama2', credentialsId: '14b3681c-9bff-4c2c-9ad8-3e017aa6ab92', url: 'https://github.com/rodriguezmelian/GitGaby.git'
   }
-}
